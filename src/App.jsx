@@ -40,6 +40,7 @@ import Hero from './components/Hero';
 import Callout from './components/Callout';
 import PhoneMockup from './components/PhoneMockup';
 import Quiz from './components/Quiz';
+import DownloadCTA from './components/DownloadCTA';
 import Footer from './components/Footer';
 
 const CIALDINI_ICONS = {
@@ -564,6 +565,11 @@ export default function App() {
         {/* 7. QUIZ INTERATIVO (6 PERGUNTAS) + GLOSSÁRIO ESSENCIAL (8 TERMOS) */}
         {/* ================================================================= */}
         <Quiz />
+
+        {/* ================================================================= */}
+        {/* 8. CTA DE DOWNLOAD DO E-BOOK COMPLETO (PDF)                       */}
+        {/* ================================================================= */}
+        <DownloadCTA />
       </main>
 
       {/* =================================================================== */}

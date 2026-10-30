@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ShieldAlert, LifeBuoy } from 'lucide-react';
+import { ShieldAlert, LifeBuoy, Download } from 'lucide-react';
 
 const NAV_ITEMS = [
   { id: 'sec-psicologia', label: 'Psicologia', color: 'sky' },
@@ -68,8 +68,8 @@ export default function Navbar() {
               item.color === 'sky'
                 ? 'bg-sky-50 hover:bg-sky-100 border-sky-200 text-sky-800'
                 : item.color === 'emerald'
-                ? 'bg-emerald-50 hover:bg-emerald-100 border-emerald-200 text-emerald-800'
-                : 'bg-purple-50 hover:bg-purple-100 border-purple-200 text-purple-800';
+                  ? 'bg-emerald-50 hover:bg-emerald-100 border-emerald-200 text-emerald-800'
+                  : 'bg-purple-50 hover:bg-purple-100 border-purple-200 text-purple-800';
 
             return (
               <button
@@ -83,13 +83,26 @@ export default function Navbar() {
           })}
         </nav>
 
-        <button
-          onClick={() => scrollToId('sec-emergencia-box')}
-          className="inline-flex items-center gap-1.5 rounded-full bg-rose-100 hover:bg-rose-200 border border-rose-300 px-3.5 py-1.5 text-xs font-extrabold text-rose-900 shadow-sm transition-all"
-        >
-          <LifeBuoy className="h-3.5 w-3.5 text-rose-700" />
-          <span>Emergência</span>
-        </button>
+        <div className="flex items-center gap-2">
+          <a
+            id="navbar-download-ebook"
+            href="/Mente_em_Alerta_v3.pdf"
+            download="Mente_em_Alerta_Guia_Completo.pdf"
+            className="inline-flex items-center gap-1.5 rounded-full bg-sky-100 hover:bg-sky-200 border border-sky-200 px-3.5 py-1.5 text-xs font-extrabold text-sky-900 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
+          >
+            <Download className="h-3.5 w-3.5 text-sky-700" />
+            <span className="hidden sm:inline">Baixar E-book (PDF)</span>
+            <span className="sm:hidden">PDF</span>
+          </a>
+
+          <button
+            onClick={() => scrollToId('sec-emergencia-box')}
+            className="inline-flex items-center gap-1.5 rounded-full bg-rose-100 hover:bg-rose-200 border border-rose-300 px-3.5 py-1.5 text-xs font-extrabold text-rose-900 shadow-sm transition-all"
+          >
+            <LifeBuoy className="h-3.5 w-3.5 text-rose-700" />
+            <span>Emergência</span>
+          </button>
+        </div>
       </div>
     </header>
   );
